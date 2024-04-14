@@ -18,6 +18,9 @@ class BubbleStories extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.grey[400],
               ),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/IMG_0694.jpeg'),
+              )
             ),
             SizedBox(
               height: 8,

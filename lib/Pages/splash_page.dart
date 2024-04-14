@@ -12,24 +12,15 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => SplashPageState();
 }
 
-class SplashPageState extends State<SplashPage>
-    with SingleTickerProviderStateMixin {
-  late Animation animation;
-  late AnimationController animationController;
-  static const String LOGINKEY = 'login';
+class SplashPageState extends State<SplashPage> {
+
 
   @override
   void initState() {
     super.initState();
-    whereToGo();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 3));
-    animation = Tween(begin: 50.0, end: 300.0).animate(animationController);
-
-    animationController.addListener(() {
-      setState(() {});
+    Timer(const Duration(seconds: 4), () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginUi()));
     });
-    animationController.forward();
   }
 
   @override
@@ -50,24 +41,5 @@ class SplashPageState extends State<SplashPage>
         )),
       ),
     );
-  }
-
-  void whereToGo() async {
-    var sharedPref = await SharedPreferences.getInstance();
-    var isLoggedIn = sharedPref.getBool(LOGINKEY);
-    Timer(const Duration(seconds: 4), () {
-      if (isLoggedIn != null) {
-        if (isLoggedIn) {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => HomePage()));
-        } else {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => LoginUi()));
-        }
-      } else {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => LoginUi()));
-      }
-    });
   }
 }

@@ -25,6 +25,10 @@ class UserPosts extends StatelessWidget {
                       color: Colors.grey[300],
                       shape: BoxShape.circle,
                     ),
+                    child: const CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/IMG_0694.jpeg'),
+                      
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -32,18 +36,20 @@ class UserPosts extends StatelessWidget {
                   //Name
                   Text(
                     name,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              Icon(Icons.menu),
+              const Icon(Icons.menu),
             ],
           ),
         ),
         //Posts
         Container(
           height: 400,
-          color: Colors.grey[400],
+          width: 500,
+          // color: Colors.grey[400],
+          child: Image.asset('assets/images/IMG_0694.jpeg'),
         ),
         //below the post --> buttons, comments
         const Padding(

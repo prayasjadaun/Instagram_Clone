@@ -10,7 +10,7 @@ class UserAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,9 +22,11 @@ class UserAccount extends StatelessWidget {
                 children: [
                   //Profile Picture
                   Container(
+                    child: CircleAvatar(backgroundImage: AssetImage('assets/images/IMG_0694.jpeg'),),
                     height: 100,
                     width: 100,
                     decoration: BoxDecoration(
+
                         color: Colors.grey[300], shape: BoxShape.circle),
                   ),
                   const Expanded(
@@ -78,7 +80,7 @@ class UserAccount extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 2.0),
-                    child: Text('I create cool things'),
+                    child: Text('I code cool things'),
                   ),
                   Text(
                     '@codewithprayas',
@@ -146,12 +148,12 @@ class UserAccount extends StatelessWidget {
             const SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
+              child: SizedBox(
                 height: 130,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    BubbleStories(text: 'Story 1'),
+                    BubbleStories(text: 'Story 1',),
                     BubbleStories(text: 'Story 2'),
                     BubbleStories(text: 'Story 3'),
                     BubbleStories(text: 'Story 4'),

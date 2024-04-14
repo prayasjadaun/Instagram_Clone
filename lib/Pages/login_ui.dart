@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_demo/Pages/home_page.dart';
 import 'package:social_media_demo/Pages/square_tile.dart';
@@ -9,11 +8,8 @@ class LoginUi extends StatelessWidget {
   LoginUi({super.key});
 
   var nameController = TextEditingController();
-
   var passController = TextEditingController();
-
   get signUserIn => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
